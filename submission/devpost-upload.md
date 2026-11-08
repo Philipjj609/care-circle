@@ -120,8 +120,9 @@ workflow?**
 | Project name | `care-circle` |
 | One-line tagline | Reports every disagreement between a family's own care documents, computed on the NAS |
 | Track | Automate Your Workflow |
-| Team members | Philip Jon Ji Ciuca (individual entry) — pending confirmation |
-| Source code URL | https://github.com/Philipjj609/ugreen-hackathon-care-circle — private unless the board says otherwise |
+| Team members | Philip Jon Ji Ciuca (individual entry) |
+| Source code URL | https://github.com/Philipjj609/care-circle — public |
+| Sponsors/partners | None to disclose. The hackathon sponsor is AMERICA UGREEN LIMITED (rules §2); no financial or preferential support was received (§4) |
 | Third-party notice | None at run time. The Uliya skill kit v0.7.3 was used at development time only and is not distributed in the package |
 
 ## Consent wording (if the form asks)
@@ -132,7 +133,7 @@ workflow?**
 
 ## Before you submit
 
-- [ ] The board card is answered (track, team, sponsors, GitHub, emphasis).
+- [x] Board decisions applied: track, team, GitHub visibility, emphasis; sponsors researched against the official rules.
 - [ ] `python3 tools/make_submission.py` run and the two files re-copied.
 - [ ] PDF opens, is 2 pages, and shows no markdown artifacts.
 - [ ] ZIP opens and contains `care-circle/SKILL.md` plus the two references.
