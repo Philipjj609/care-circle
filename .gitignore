@@ -3,6 +3,16 @@ dist/
 vendor/
 scratch/
 
+# Internal working material lives in the separate ugreen-hackathon-work repo
+architecture/
+council/
+presentation/
+research/
+round2/
+scratch/
+tools/
+video/
+
 # Python
 __pycache__/
 *.pyc
