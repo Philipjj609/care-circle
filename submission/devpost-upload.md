@@ -10,7 +10,7 @@ track. The upload itself needs Philip's Devpost account.
 | File | Path | Size | Limit |
 |---|---|---|---|
 | Project Proposal PDF | `proposal/care-circle-proposal.pdf` | 7,751 bytes, 2 pages | ≤ 1 MB |
-| Pre-test Skill Package ZIP | `submission/care-circle-skill.zip` | 6,371 bytes, 3 files | ≤ 10 MB, ≤ 100 files, ≤ 1 MB each |
+| Pre-test Skill Package ZIP | `submission/care-circle-skill.zip` | 6,403 bytes, 3 files | ≤ 10 MB, ≤ 100 files, ≤ 1 MB each |
 
 Both are the canonical copies, byte-identical to `dist/`. Re-verify before
 uploading:
