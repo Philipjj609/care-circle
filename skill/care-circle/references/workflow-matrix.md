@@ -14,7 +14,7 @@ Per-step delegation map for the care brief. Every step passes only the real resu
 | 8 | orchestrator | approval gate: present the brief, the conflicts and the unreadable list | none | waiting_approval | no approval means no write; a conflict left unresolved stays in the brief marked unresolved |
 | 9 | file-agent | `ug-filesystem mkdir` | state-change | gateway | pending creation is surfaced; read-only work continues |
 | 10 | knowledge-agent | two `ug-knowledge save-text` calls, one per document | state-change | workflow | pending write is surfaced; neither document is reported as saved until `completed` |
-| 11 | file-agent | `ug-filemgr tag-get-by-name`, `ug-filemgr tag-add` (tag-id set to the tag name), `ug-filemgr tag-add-file` | state-change | gateway + conditional | a tag that cannot be created is reported as unavailable; no file is tagged by guess |
+| 11 | file-agent | `ug-filemgr tag-get-by-name` (read, none), `ug-filemgr tag-add` (tag-id set to the tag name; gateway), `ug-filemgr tag-add-file` (tag-id set to the returned tag identifier; conditional) | read + state-change | none + gateway + conditional | a tag that cannot be created is reported as unavailable; no file is tagged by guess |
 
 ## Artifact structure
 
