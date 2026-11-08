@@ -149,15 +149,18 @@ kit v0.7.3 (not distributed inside the package).
 
 | Time | Beat |
 |---|---|
-| 0:00 | Fresh NAS, nothing pre-loaded. Finalist uploads the care folder (3 label photos, 1 letter, 1 memo, 1 deliberately blurry photo) and names folder, parent, date. |
+| 0:00 | Fresh NAS, nothing pre-loaded. Finalist uploads the care folder (3 label photos, 1 current letter, 1 earlier report, 1 voice memo, 1 deliberately blurry photo — 7 files) and names folder, parent, date. |
 | 0:30 | File enumeration + `vision-ocr`/`vision-vlm`. Medication table on screen, each row with its source path. |
 | 1:00 | Document extraction + label-vs-report comparison flags a dose conflict; voice memo transcribed. |
 | 2:00 | Approval gate → packet folder → brief saved → sources tagged. File tree shows the tagged sources. |
 | 2:45 | Sibling update read aloud; unreadable list and confirmation line held on screen. End card. |
 
-**Finalist prep:** curate 4–6 files; include a previous-visit report for the baseline;
-engineer one deliberate label/report dose conflict; pre-test one label with
-`vision-vlm`; pre-create the three tags or rely on the bootstrap.
+**Finalist prep:** a complete synthetic care folder, its expected outputs and a
+40-check acceptance list are already built under `round2/demo-assets/`. It
+carries a previous-visit report for the baseline and one deliberate
+label/report dose conflict (metformin 850 mg on the label, 500 mg in the letter).
+Pre-test one label with `vision-vlm`; pre-create the three tags or rely on the
+bootstrap.
 
 ## 12. Risks
 
@@ -183,3 +186,8 @@ engineer one deliberate label/report dose conflict; pre-test one label with
   step 5 now also compares the most recent report against the earlier report
   (section 4, "changes since the previous visit", was claimed but never computed);
   step 6 now returns the questions the speaker asked (section 5).
+- 2026-11-08 — synthetic Round 2 demo asset set built under `round2/demo-assets/`:
+  a seven-file fictional care folder, the required content of the brief and the
+  sibling update, and a 40-check acceptance list. It carries the deliberate
+  metformin dose conflict, the earlier-report baseline and one unreadable photo,
+  so the finalist can rehearse and record without a real patient's data.

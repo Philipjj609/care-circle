@@ -23,7 +23,9 @@ council/                          concept-selection record and judge verdicts
 research/                         candidate concepts and competitor landscape
 presentation/nov-12-briefing.md    board briefing
 video/round-2-script.md           Round 2 demo shot list and narration
+round2/demo-assets/               synthetic care folder, expected outputs, 40-check oracle
 tools/make_submission.py          renders the proposal PDF and the Skill ZIP
+tools/make_demo_assets.py         renders the synthetic Round 2 demo asset set
 ```
 
 ## Build the deliverables
@@ -52,6 +54,22 @@ node <uliya-skill-kit>/scripts/check-skill.mjs skill/care-circle
 - Not yet validated: on-device behaviour of `ug-photo vision-ocr`/`vision-vlm`,
   `ug-document extract` (schema `medical-report`), `ug-knowledge
   audio-transcription`, tag creation and write approval. These are Round 2 items.
+
+## Round 2 (finalists)
+
+Invited Nov 21; one day of remote NAS access Nov 22–28; final package and a
+three-minute YouTube video due Nov 30.
+
+- `round2/demo-assets/margaret-care-2026-11-08/` — a complete **synthetic** care
+  folder (three readable labels, current letter, earlier report, voice memo,
+  one unreadable photo). Fictional patient and pharmacy; safe to show on camera.
+- `round2/demo-assets/expected/` — the required content of the brief and the
+  sibling update, plus a 40-check acceptance list to run on the NAS.
+- `video/round-2-script.md` — shot list, narration and failure fallbacks.
+
+```bash
+python3 tools/make_demo_assets.py   # regenerate the asset set (needs ffmpeg)
+```
 
 ## Entrant
 

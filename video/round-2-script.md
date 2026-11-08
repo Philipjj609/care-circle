@@ -11,14 +11,26 @@ document come out within the first 30 seconds. Everything after that is confirma
 
 ## Pre-recording prep (do this before the testing day)
 
-- Curate 4–6 files in one folder:
-  - 2–3 straight-on, well-lit photos of **printed** pill labels (no handwriting).
-  - 1 clean clinic letter PDF.
-  - 1 short voice memo in a supported format.
-  - 1 deliberately blurry photo (this is the honest-unreadable demo).
-- Bring a **previous-visit report** so "changes since last visit" has a baseline.
+**The asset set is already built.** `round2/demo-assets/margaret-care-2026-11-08/`
+holds a complete synthetic folder — three readable labels, one current clinic
+letter, one earlier report, one voice memo with two questions, and one
+deliberately unreadable photo. It is fictional, safe to show on camera, and
+`round2/demo-assets/expected/checks.md` is the pass/fail oracle. Use it as-is
+unless you have a real folder to shoot.
+
+If you shoot your own instead, curate 6–7 files in one folder:
+
+- 2–3 straight-on, well-lit photos of **printed** pill labels (no handwriting).
+- 1 clean clinic letter PDF.
+- 1 earlier report, so "changes since last visit" has a baseline.
+- 1 short voice memo in a supported format.
+- 1 deliberately blurry photo (this is the honest-unreadable demo).
+
+Either way:
+
 - Engineer **one deliberate conflict**: a label whose dose differs from the letter.
   The conflict row is the best moment in the video; do not leave it to chance.
+  The asset set's metformin label (850 mg) conflicts with the letter (500 mg).
 - Pre-test one label with `ug-photo vision-vlm`. If the local model is weak, lead with
   the document + audio path and keep the photo step short.
 - Pre-create the three tags on the assigned NAS in the first 30 seconds, or rely on the
@@ -29,8 +41,8 @@ document come out within the first 30 seconds. Everything after that is confirma
 
 | Time | Picture | Narration (subtitles) |
 |---|---|---|
-| **0:00** | Cold open: UGOS desktop on the fresh NAS, empty. Finalist uploads the care folder — 3 label photos, 1 letter, 1 memo, 1 blurry photo. | "Fresh NAS, nothing pre-loaded. This is my dad's folder: pill bottles, a clinic letter, and a voice memo. In the next three minutes it becomes a brief I can hand to his doctor." |
-| **0:20** | The Skill is invoked. Step 1: folder, parent name, appointment date confirmed. | "I name the folder, my father, and the appointment. That is the only input." |
+| **0:00** | Cold open: UGOS desktop on the fresh NAS, empty. Finalist uploads the care folder — 3 label photos, 1 clinic letter, 1 earlier report, 1 voice memo, 1 blurry photo (7 files). | "Fresh NAS, nothing pre-loaded. This is my mum's folder: pill bottles, a clinic letter, the earlier report, and a voice memo. In the next three minutes it becomes a brief I can hand to her doctor." |
+| **0:20** | The Skill is invoked. Step 1: folder, parent name, appointment date confirmed. | "I name the folder, my mother, and the appointment. That is the only input." |
 | **0:30** | File expert enumerates and dedupes; photo expert runs `vision-ocr` and `vision-vlm`. The medication table appears — drug, dose, frequency, source path per row. | "It reads the pill bottles, not just the PDFs — and every row names the file it came from." |
 | **1:00** | Document expert extracts the letter; `ug-document qa` compares each medication against its label. A conflict row appears with both source paths. Voice memo is transcribed. | "It caught that the label and the letter disagree on the dose. That is the question for the doctor — and it is flagged, not silently resolved." |
 | **1:30** | The brief assembles: medications, recent results, changes since last visit, questions, unreadable list — plus a separate five-line sibling update. | "Current medication, recent results, what changed since last time, and the questions we want to ask." |
@@ -44,6 +56,11 @@ document come out within the first 30 seconds. Everything after that is confirma
 - Say the word **unreadable** on camera. Honesty about limits is a judging advantage.
 - Say **"nothing leaves the NAS"** once, at 2:00. It is the privacy claim; do not repeat it.
 - Do not claim the Skill diagnoses or advises dosage. It organises and surfaces.
+- **The folder is synthetic.** Say so once, in one clause — "this is a synthetic
+  demo folder" — either at 0:00 or on the end card. Do not let a judge discover it
+  later; volunteering it is a trust signal, discovering it is not.
+- The synthetic asset set uses a mother (Margaret). If you shoot a real folder,
+  match the relation in the narration.
 
 ## If something fails on the day
 
