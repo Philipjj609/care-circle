@@ -21,6 +21,16 @@ submission/care-circle-skill.zip  the submitted ZIP (<= 10 MB, 3 files)
 architecture/architecture.md      workflow, state model, failure modes, demo plan
 council/                          concept-selection record and judge verdicts
 research/                         candidate concepts and competitor landscape
+presentation/nov-12-briefing.md    board briefing
+video/round-2-script.md           Round 2 demo shot list and narration
+tools/make_submission.py          renders the proposal PDF and the Skill ZIP
+```
+
+## Build the deliverables
+
+```bash
+python3 tools/make_submission.py
+# -> dist/care-circle-proposal.pdf and dist/care-circle-pretest-skill.zip
 ```
 
 ## Check the Skill
