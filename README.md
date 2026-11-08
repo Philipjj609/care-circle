@@ -30,20 +30,12 @@ shortlisted as a finalist. Internal working notes, council records, competitor
 research and the build tooling are kept in a separate private project folder and
 are deliberately not part of this repository.
 
-## Build the deliverables
+## Rebuilding the deliverables
 
-```bash
-python3 tools/make_submission.py
-# -> dist/care-circle-proposal.pdf and dist/care-circle-pretest-skill.zip
-#    also enforces the 500-word proposal limit and prints both counts
-```
-
-Then sync the canonical copies, or the submitted files drift from the build:
-
-```bash
-cp dist/care-circle-proposal.pdf proposal/care-circle-proposal.pdf
-cp dist/care-circle-pretest-skill.zip submission/care-circle-skill.zip
-```
+The submitted PDF and ZIP are built by `tools/make_submission.py` in the private
+working folder (`ugreen-hackathon-work`), which also enforces the 500-word
+proposal limit and prints both counts. The build tooling is deliberately not part
+of this repository.
 
 ## Check the Skill
 
@@ -57,9 +49,9 @@ node <uliya-skill-kit>/scripts/check-skill.mjs skill/care-circle
 ## Round 1 status
 
 - Official static checker: **static-pass**, 0 errors, 0 warnings, 0 info.
-- Proposal: 455 English words in the ten answers; 487 including the section
+- Proposal: 457 English words in the ten answers; 489 including the section
   headings, so it stays under the 500-word limit on the strictest reading.
-- Package: 3 files, 6,403 bytes compressed, 15,108 bytes uncompressed.
+- Package: 3 files, 6,979 bytes compressed, 17,231 bytes uncompressed.
 - Not yet validated: the label-versus-report and report-versus-report
   comparisons, and the on-device behaviour of `ug-photo vision-ocr`/`vision-vlm`,
   `ug-document extract` (schema `medical-report`), `ug-document reconcile`,

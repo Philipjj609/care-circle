@@ -9,16 +9,18 @@ track. The upload itself needs Philip's Devpost account.
 
 | File | Path | Size | Limit |
 |---|---|---|---|
-| Project Proposal PDF | `proposal/care-circle-proposal.pdf` | 7,751 bytes, 2 pages | ≤ 1 MB |
-| Pre-test Skill Package ZIP | `submission/care-circle-skill.zip` | 6,403 bytes, 3 files | ≤ 10 MB, ≤ 100 files, ≤ 1 MB each |
+| Project Proposal PDF | `proposal/care-circle-proposal.pdf` | 7,945 bytes, 2 pages | ≤ 1 MB |
+| Pre-test Skill Package ZIP | `submission/care-circle-skill.zip` | 6,979 bytes, 3 files | ≤ 10 MB, ≤ 100 files, ≤ 1 MB each |
 
-Both are the canonical copies, byte-identical to `dist/`. Re-verify before
+Both are the canonical copies, byte-identical to `dist/` in the working folder.
+The build runs in the working folder, then the copies land here. Re-verify before
 uploading:
 
 ```bash
+cd C:/Users/phili/Desktop/Projects/ugreen-hackathon-work
 python3 tools/make_submission.py
-cp dist/care-circle-proposal.pdf proposal/care-circle-proposal.pdf
-cp dist/care-circle-pretest-skill.zip submission/care-circle-skill.zip
+cp dist/care-circle-proposal.pdf C:/Users/phili/Desktop/Projects/ugreen-hackathon/proposal/care-circle-proposal.pdf
+cp dist/care-circle-pretest-skill.zip C:/Users/phili/Desktop/Projects/ugreen-hackathon/submission/care-circle-skill.zip
 ```
 
 ## Track
@@ -32,7 +34,7 @@ differentiation claim.
 
 ## The ten answers
 
-Paste each into the matching form field. 455 words in the answers, 487 as the
+Paste each into the matching form field. 457 words in the answers, 489 as the
 PDF renders them; the limit is 500.
 
 **1. One sentence: What does the Skill do?**
@@ -66,26 +68,26 @@ PDF renders them; the limit is 500.
 **5. What substantive difference does your idea offer compared with existing
 tools or conventional AI solutions?**
 
-> Existing tools read one source and trust it. care-circle compares them: each
-> medication is read from its label and from the clinic letter, and a
-> disagreement is reported with both sources and left for the clinician. Nothing
-> is reconciled silently, and nothing leaves the NAS.
+> care-circle compares the family's own documents: each medication is read from
+> its label and from the clinic letter, and a disagreement is reported with both
+> source paths, deliberately left unresolved for the clinician. Nothing is
+> reconciled silently, and nothing leaves the NAS.
 
 **6. Which UGREEN AI NAS capabilities will be used, and at which step in the
 workflow?**
 
-> Step 2: ug-filesystem find and ls, ug-filemgr scan-dedupe (file-agent).
-> Step 3: ug-photo vision-ocr and vision-vlm (photo-agent). Steps 4-5:
-> ug-document metadata, page-count, extract schema medical-report, qa intent
-> comparison, reconcile (document-agent). Step 6: ug-knowledge
-> audio-transcription (knowledge-agent). Step 9: ug-filesystem mkdir.
-> Step 10: ug-knowledge save-text. Step 11: ug-filemgr tag-get-by-name, tag-add,
-> tag-add-file.
+> Step 1: file-workflow get-user-dir (file-agent). Step 2: ug-filesystem find and
+> ls, ug-filemgr scan-dedupe (file-agent). Step 3: ug-photo vision-ocr and
+> vision-vlm (photo-agent). Steps 4-5: ug-document metadata, page-count, extract
+> schema medical-report, qa intent comparison, reconcile (document-agent).
+> Step 6: ug-knowledge audio-transcription (knowledge-agent). Step 9: ug-filesystem
+> mkdir. Step 10: ug-knowledge save-text. Step 11: ug-filemgr tag-get-by-name,
+> tag-add, tag-add-file.
 
 **7. What was your technical approach?**
 
-> Pure Markdown orchestration. It delegates only through delegate --target to
-> the four registered experts, passing each step's real result downstream. The
+> Pure Markdown orchestration. It delegates only through delegate --target to four
+> of the six registered experts, passing each step's real result downstream. The
 > comparisons are separate ug-document qa and reconcile calls, not a single
 > summary. Read steps are ungated; the brief, folder, writes and tags are
 > approval-gated. Inputs: the folder, the parent, the date. The NAS local model
@@ -100,11 +102,11 @@ workflow?**
 
 **9. What is your final validation plan?**
 
-> Core case 1: three medication photos, one letter and one voice memo produce a
-> brief with every claim cited and every unreadable file listed. Core case 2: a
-> second letter produces the change comparison, with one engineered dose
-> disagreement left unresolved. Edge case: one blurry photo and no documents
-> completes with an empty medication section and an unreadable entry.
+> Core case: the seven-file oracle — four medication images (one deliberately
+> blurry), two clinic letters and one voice memo — produces a brief with every
+> claim cited, every unreadable file listed, the change comparison and one
+> engineered dose disagreement left unresolved. Edge case: one blurry photo and no
+> documents completes with an empty medication section and an unreadable entry.
 
 **10. Are there any known limitations of your Project?**
 
@@ -123,7 +125,7 @@ workflow?**
 | Team members | Philip Jon Ji Ciuca (individual entry) |
 | Source code URL | https://github.com/Philipjj609/care-circle — public |
 | Sponsors/partners | None to disclose. The hackathon sponsor is AMERICA UGREEN LIMITED (rules §2); no financial or preferential support was received (§4) |
-| Third-party notice | None at run time. The Uliya skill kit v0.7.3 was used at development time only and is not distributed in the package |
+| Third-party notice | None at run time. Development-time only, not distributed in the package: Uliya Skill Creation Tool (uliya-skill-kit v0.7.3). Source: UGREEN Skill Developer Package / Starter Kit. Licence: UGREEN developer licence. |
 
 ## Consent wording (if the form asks)
 
