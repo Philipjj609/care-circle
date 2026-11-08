@@ -43,7 +43,7 @@ from real results, and holds the approval gate.
 | 2 | file-agent | `ug-filesystem find`, `ls`; `ug-filemgr scan-dedupe` | read | none |
 | 3 | photo-agent | `ug-photo vision-ocr` (one call per image); `vision-vlm` on ambiguous labels | read | none |
 | 4 | document-agent | `ug-document metadata`, `page-count`, `extract` (schema `medical-report`) — diagnoses, medications with dates, results and measurements, findings | read | none |
-| 5 | document-agent | `ug-document qa` (intent `comparison`) — label vs report, then report vs earlier report | read | none |
+| 5 | document-agent | `ug-document qa` (intent `comparison`, label rows carried in the query) — label vs report; `ug-document reconcile` — report vs earlier report | read | none |
 | 6 | knowledge-agent | `ug-knowledge audio-transcription` — transcript and any questions the speaker asked | read | none |
 | 7 | orchestrator | assemble the brief and the sibling update from real results 2–6 | — | none |
 | 8 | orchestrator | **approval gate** — present brief, conflicts, unreadable list | — | waiting_approval |
@@ -166,7 +166,7 @@ bootstrap.
 
 | Risk | Severity | Mitigation |
 |---|---|---|
-| Fresh-NAS vision model returns "unreadable" for all labels | High | honest unreadable list is a designed outcome; demo still shows the artifact and the conflict path via documents |
+| Fresh-NAS vision model returns "unreadable" for all labels | High | honest unreadable list is a designed outcome; the document-only report-vs-report reconciliation still lands; only the label-vs-report conflict is lost |
 | Judges see it as "just a summary" | Medium | the artifact is a saved, tagged file set with source paths, not prose |
 | Medical liability perception | Medium | never diagnoses, never advises dosage, always prints the clinician-confirmation line |
 | Tag bootstrap fails on device | Low | fallback reports tags unavailable; no file is tagged by guess |

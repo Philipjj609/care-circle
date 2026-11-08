@@ -62,11 +62,12 @@ flag it with both source paths and must **not** resolve it.
 
 ## If the on-device vision cannot read a rendered label
 
-Rendered labels are cleaner than real phone photos, so this should not happen —
-but if it does, the demo still works: the letter carries the same medications,
-so the conflict, the change-since-visit and the artifact are all still visible.
-Say "it could not read this one" and move on. The unreadable list is a designed
-outcome, not a failure.
+Rendered labels are cleaner than real phone photos, so this should not happen.
+If it does, the damage is bounded and specific: the change-since-visit
+comparison is document-only, so it still lands; the label-versus-letter conflict
+does not, because without a label reading there is nothing to compare. Say "it
+could not read this one", leave the conflict row out rather than guessing, and
+move on. The unreadable list is a designed outcome, not a failure.
 
 ## Regenerating
 

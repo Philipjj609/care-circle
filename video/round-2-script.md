@@ -32,7 +32,9 @@ Either way:
   The conflict row is the best moment in the video; do not leave it to chance.
   The asset set's metformin label (850 mg) conflicts with the letter (500 mg).
 - Pre-test one label with `ug-photo vision-vlm`. If the local model is weak, lead with
-  the document + audio path and keep the photo step short.
+  the document + audio path and keep the photo step short. The change-since-visit
+  comparison is document-only (`ug-document reconcile`), so it lands even if no
+  label is read; only the label-versus-letter conflict needs vision.
 - Pre-create the three tags on the assigned NAS in the first 30 seconds, or rely on the
   Skill's `tag-get-by-name` → `tag-add` bootstrap.
 - Record a fallback take on a second small folder.
@@ -44,7 +46,7 @@ Either way:
 | **0:00** | Cold open: UGOS desktop on the fresh NAS, empty. Finalist uploads the care folder — 3 label photos, 1 clinic letter, 1 earlier report, 1 voice memo, 1 blurry photo (7 files). | "Fresh NAS, nothing pre-loaded. This is my mum's folder: pill bottles, a clinic letter, the earlier report, and a voice memo. In the next three minutes it becomes a brief I can hand to her doctor." |
 | **0:20** | The Skill is invoked. Step 1: folder, parent name, appointment date confirmed. | "I name the folder, my mother, and the appointment. That is the only input." |
 | **0:30** | File expert enumerates and dedupes; photo expert runs `vision-ocr` and `vision-vlm`. The medication table appears — drug, dose, frequency, source path per row. | "It reads the pill bottles, not just the PDFs — and every row names the file it came from." |
-| **1:00** | Document expert extracts the letter; `ug-document qa` compares each medication against its label. A conflict row appears with both source paths. Voice memo is transcribed. | "It caught that the label and the letter disagree on the dose. That is the question for the doctor — and it is flagged, not silently resolved." |
+| **1:00** | Document expert extracts the letter; `ug-document qa` compares each medication against its label, and `ug-document reconcile` compares the current letter against the earlier one. A conflict row appears with both source paths. Voice memo is transcribed. | "It caught that the label and the letter disagree on the dose. That is the question for the doctor — and it is flagged, not silently resolved." |
 | **1:30** | The brief assembles: medications, recent results, changes since last visit, questions, unreadable list — plus a separate five-line sibling update. | "Current medication, recent results, what changed since last time, and the questions we want to ask." |
 | **2:00** | Approval gate pauses. Finalist approves. Packet folder created, brief saved, sources tagged. File tree shows the tagged sources. | "Nothing leaves the NAS. I approve the brief, it is written to a care folder, and every source is tagged in place." |
 | **2:30** | Sibling update read aloud (five lines). Unreadable list and confirmation line held on screen. | "My sister gets five lines she can read in a minute. The blurry photo is listed as unreadable — the Skill would rather say nothing than guess." |

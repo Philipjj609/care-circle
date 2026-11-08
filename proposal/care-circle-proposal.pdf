@@ -16,7 +16,7 @@ endobj
 << /Type /Page /Parent 2 0 R /MediaBox [0 0 595.28 841.89] /Resources << /Font << /F1 3 0 R /F2 4 0 R >> >> /Contents 6 0 R >>
 endobj
 6 0 obj
-<< /Length 4561 >>
+<< /Length 4414 >>
 stream
 BT /F2 17.00 Tf 1 0 0 1 56.00 769.89 Tm (UGREEN Hackathon 2026 on AI NAS — Project Proposal) Tj ET
 BT /F2 10.50 Tf 1 0 0 1 56.00 745.89 Tm (Project: care-circle) Tj ET
@@ -25,65 +25,66 @@ BT /F1 10.50 Tf 1 0 0 1 56.00 713.89 Tm (Round 1 submission) Tj ET
 0.8 w 56.00 691.39 m 539.28 691.39 l S
 BT /F2 12.00 Tf 1 0 0 1 56.00 673.39 Tm (1. What it does) Tj ET
 BT /F1 10.50 Tf 1 0 0 1 56.00 654.39 Tm (care-circle turns one folder of medication photos, clinic letters and voice memos into a dated,) Tj ET
-BT /F1 10.50 Tf 1 0 0 1 56.00 639.89 Tm (source-cited doctor-visit brief and a sibling update, computed on the NAS.) Tj ET
-BT /F2 12.00 Tf 1 0 0 1 56.00 613.39 Tm (2. User and problem) Tj ET
-BT /F1 10.50 Tf 1 0 0 1 56.00 594.39 Tm (Adult children caring for an ageing parent. Evidence is scattered across pill-bottle photos, discharge) Tj ET
-BT /F1 10.50 Tf 1 0 0 1 56.00 579.89 Tm (summaries and unplayed voice memos, so every appointment is a scramble.) Tj ET
-BT /F2 12.00 Tf 1 0 0 1 56.00 553.39 Tm (3. Solution) Tj ET
-BT /F1 10.50 Tf 1 0 0 1 56.00 534.39 Tm (A local care brief that reads each modality with the matching UGOS expert and writes two documents: a) Tj ET
-BT /F1 10.50 Tf 1 0 0 1 56.00 519.89 Tm (source-cited brief covering current medications with their sources, label-versus-report conflicts, recent) Tj ET
-BT /F1 10.50 Tf 1 0 0 1 56.00 505.39 Tm (results, changes since the last visit, questions for the doctor and an unreadable list; and a five-line) Tj ET
-BT /F1 10.50 Tf 1 0 0 1 56.00 490.89 Tm (sibling update. It never diagnoses or advises dosage.) Tj ET
-BT /F2 12.00 Tf 1 0 0 1 56.00 464.39 Tm (4. User flow) Tj ET
-BT /F1 10.50 Tf 1 0 0 1 56.00 445.39 Tm (The user names a folder, the parent and the appointment date. The file expert enumerates and) Tj ET
-BT /F1 10.50 Tf 1 0 0 1 56.00 430.89 Tm (deduplicates the folder, the photo expert reads medication labels, the document expert extracts clinic) Tj ET
-BT /F1 10.50 Tf 1 0 0 1 56.00 416.39 Tm (letters and compares each medication against its label, and the knowledge expert transcribes voice) Tj ET
-BT /F1 10.50 Tf 1 0 0 1 56.00 401.89 Tm (memos. The brief and sibling update are approved, written back and tagged at source.) Tj ET
-BT /F2 12.00 Tf 1 0 0 1 56.00 375.39 Tm (5. Difference from existing tools) Tj ET
-BT /F1 10.50 Tf 1 0 0 1 56.00 356.39 Tm (Existing tools are static inventories, expiry diffs or single-modal cloud assistants. None reads a pill bottle) Tj ET
-BT /F1 10.50 Tf 1 0 0 1 56.00 341.89 Tm (with on-device vision, transcribes the parent's voice, extracts the clinic letter and binds every claim to its) Tj ET
-BT /F1 10.50 Tf 1 0 0 1 56.00 327.39 Tm (source. Health data never leaves the NAS; the brief is written back with sources tagged in place.) Tj ET
-BT /F2 12.00 Tf 1 0 0 1 56.00 300.89 Tm (6. NAS capabilities by step) Tj ET
-BT /F1 10.50 Tf 1 0 0 1 56.00 281.89 Tm (Step 2: ug-filesystem find and ls, ug-filemgr scan-dedupe \(file-agent\). Step 3: ug-photo vision-ocr and) Tj ET
-BT /F1 10.50 Tf 1 0 0 1 56.00 267.39 Tm (vision-vlm \(photo-agent\). Steps 4-5: ug-document metadata, page-count, extract schema) Tj ET
-BT /F1 10.50 Tf 1 0 0 1 56.00 252.89 Tm (medical-report, qa intent comparison \(document-agent\). Step 6: ug-knowledge audio-transcription) Tj ET
-BT /F1 10.50 Tf 1 0 0 1 56.00 238.39 Tm (\(knowledge-agent\). Step 9: ug-filesystem mkdir. Step 10: ug-knowledge save-text. Step 11: ug-filemgr) Tj ET
-BT /F1 10.50 Tf 1 0 0 1 56.00 223.89 Tm (tag-get-by-name, tag-add, tag-add-file.) Tj ET
-BT /F2 12.00 Tf 1 0 0 1 56.00 197.39 Tm (7. Technical approach) Tj ET
-BT /F1 10.50 Tf 1 0 0 1 56.00 178.39 Tm (Pure Markdown orchestration. It delegates only through delegate --target to the four registered experts) Tj ET
-BT /F1 10.50 Tf 1 0 0 1 56.00 163.89 Tm (in order, passing each step's real result downstream. Read steps are ungated; brief approval, folder) Tj ET
-BT /F1 10.50 Tf 1 0 0 1 56.00 149.39 Tm (creation, writes and tags are approval-gated. Inputs: the folder, the parent, the date. The NAS local) Tj ET
-BT /F1 10.50 Tf 1 0 0 1 56.00 134.89 Tm (model performs vision, extraction and transcription; nothing leaves the device.) Tj ET
-BT /F2 12.00 Tf 1 0 0 1 56.00 108.39 Tm (8. Status) Tj ET
-BT /F1 10.50 Tf 1 0 0 1 56.00 89.39 Tm (Implemented: the twelve-step orchestration, the label-versus-report and change-since-visit) Tj ET
-BT /F1 10.50 Tf 1 0 0 1 56.00 74.89 Tm (comparisons, the unreadable list, approval handling, and a static checker pass with zero errors and) Tj ET
+BT /F1 10.50 Tf 1 0 0 1 56.00 639.89 Tm (source-cited brief reporting every disagreement between the family's own documents, and a sibling) Tj ET
+BT /F1 10.50 Tf 1 0 0 1 56.00 625.39 Tm (update, computed on the NAS.) Tj ET
+BT /F2 12.00 Tf 1 0 0 1 56.00 598.89 Tm (2. User and problem) Tj ET
+BT /F1 10.50 Tf 1 0 0 1 56.00 579.89 Tm (Adult children caring for an ageing parent. Evidence is scattered across pill-bottle photos, discharge) Tj ET
+BT /F1 10.50 Tf 1 0 0 1 56.00 565.39 Tm (summaries and unplayed voice memos, so appointments are a scramble.) Tj ET
+BT /F2 12.00 Tf 1 0 0 1 56.00 538.89 Tm (3. Solution) Tj ET
+BT /F1 10.50 Tf 1 0 0 1 56.00 519.89 Tm (A local care brief that reads each modality with the matching UGOS expert and writes two documents: a) Tj ET
+BT /F1 10.50 Tf 1 0 0 1 56.00 505.39 Tm (source-cited brief covering current medications, label-versus-report conflicts, results, changes since the) Tj ET
+BT /F1 10.50 Tf 1 0 0 1 56.00 490.89 Tm (last visit, questions for the doctor and an unreadable list; and a five-line sibling update. It never) Tj ET
+BT /F1 10.50 Tf 1 0 0 1 56.00 476.39 Tm (diagnoses or advises dosage.) Tj ET
+BT /F2 12.00 Tf 1 0 0 1 56.00 449.89 Tm (4. User flow) Tj ET
+BT /F1 10.50 Tf 1 0 0 1 56.00 430.89 Tm (The user names a folder, the parent and the appointment date. The file expert enumerates and) Tj ET
+BT /F1 10.50 Tf 1 0 0 1 56.00 416.39 Tm (deduplicates the folder, the photo expert reads medication labels, the document expert extracts clinic) Tj ET
+BT /F1 10.50 Tf 1 0 0 1 56.00 401.89 Tm (letters and compares each medication against its label, and the knowledge expert transcribes voice) Tj ET
+BT /F1 10.50 Tf 1 0 0 1 56.00 387.39 Tm (memos. The brief and sibling update are approved, written back and tagged.) Tj ET
+BT /F2 12.00 Tf 1 0 0 1 56.00 360.89 Tm (5. Difference from existing tools) Tj ET
+BT /F1 10.50 Tf 1 0 0 1 56.00 341.89 Tm (Existing tools read one source and trust it. care-circle compares them: each medication is read from its) Tj ET
+BT /F1 10.50 Tf 1 0 0 1 56.00 327.39 Tm (label and from the clinic letter, and a disagreement is reported with both sources and left for the) Tj ET
+BT /F1 10.50 Tf 1 0 0 1 56.00 312.89 Tm (clinician. Nothing is reconciled silently, and nothing leaves the NAS.) Tj ET
+BT /F2 12.00 Tf 1 0 0 1 56.00 286.39 Tm (6. NAS capabilities by step) Tj ET
+BT /F1 10.50 Tf 1 0 0 1 56.00 267.39 Tm (Step 2: ug-filesystem find and ls, ug-filemgr scan-dedupe \(file-agent\). Step 3: ug-photo vision-ocr and) Tj ET
+BT /F1 10.50 Tf 1 0 0 1 56.00 252.89 Tm (vision-vlm \(photo-agent\). Steps 4-5: ug-document metadata, page-count, extract schema) Tj ET
+BT /F1 10.50 Tf 1 0 0 1 56.00 238.39 Tm (medical-report, qa intent comparison, reconcile \(document-agent\). Step 6: ug-knowledge) Tj ET
+BT /F1 10.50 Tf 1 0 0 1 56.00 223.89 Tm (audio-transcription \(knowledge-agent\). Step 9: ug-filesystem mkdir. Step 10: ug-knowledge save-text.) Tj ET
+BT /F1 10.50 Tf 1 0 0 1 56.00 209.39 Tm (Step 11: ug-filemgr tag-get-by-name, tag-add, tag-add-file.) Tj ET
+BT /F2 12.00 Tf 1 0 0 1 56.00 182.89 Tm (7. Technical approach) Tj ET
+BT /F1 10.50 Tf 1 0 0 1 56.00 163.89 Tm (Pure Markdown orchestration. It delegates only through delegate --target to the four registered experts,) Tj ET
+BT /F1 10.50 Tf 1 0 0 1 56.00 149.39 Tm (passing each step's real result downstream. The comparisons are separate ug-document qa and) Tj ET
+BT /F1 10.50 Tf 1 0 0 1 56.00 134.89 Tm (reconcile calls, not a single summary. Read steps are ungated; the brief, folder, writes and tags are) Tj ET
+BT /F1 10.50 Tf 1 0 0 1 56.00 120.39 Tm (approval-gated. Inputs: the folder, the parent, the date. The NAS local model performs vision, extraction) Tj ET
+BT /F1 10.50 Tf 1 0 0 1 56.00 105.89 Tm (and transcription; nothing leaves the device.) Tj ET
+BT /F2 12.00 Tf 1 0 0 1 56.00 79.39 Tm (8. Status) Tj ET
 endstream
 endobj
 7 0 obj
 << /Type /Page /Parent 2 0 R /MediaBox [0 0 595.28 841.89] /Resources << /Font << /F1 3 0 R /F2 4 0 R >> >> /Contents 8 0 R >>
 endobj
 8 0 obj
-<< /Length 2172 >>
+<< /Length 2379 >>
 stream
-BT /F1 10.50 Tf 1 0 0 1 56.00 777.89 Tm (warnings. Pending NAS validation: on-device vision, extraction, transcription, tag creation and write) Tj ET
-BT /F1 10.50 Tf 1 0 0 1 56.00 763.39 Tm (approval.) Tj ET
-BT /F2 12.00 Tf 1 0 0 1 56.00 736.89 Tm (9. Validation) Tj ET
-BT /F1 10.50 Tf 1 0 0 1 56.00 717.89 Tm (Core case 1: three medication photos, one clinic letter and one voice memo produce a brief with every) Tj ET
-BT /F1 10.50 Tf 1 0 0 1 56.00 703.39 Tm (claim cited and every unreadable file listed. Core case 2: a second run with an earlier letter shows the) Tj ET
-BT /F1 10.50 Tf 1 0 0 1 56.00 688.89 Tm (change since the last visit. Edge case: one blurry photo and no documents completes with an empty) Tj ET
-BT /F1 10.50 Tf 1 0 0 1 56.00 674.39 Tm (medication section and an unreadable entry.) Tj ET
-BT /F2 12.00 Tf 1 0 0 1 56.00 647.89 Tm (10. Limitations) Tj ET
-BT /F1 10.50 Tf 1 0 0 1 56.00 628.89 Tm (Vision reading of curved or reflective labels can fail; unreadable labels are reported, never guessed.) Tj ET
-BT /F1 10.50 Tf 1 0 0 1 56.00 614.39 Tm (Medication detail is only as good as the sources. A conflict is reported, not resolved. Tag creation needs) Tj ET
-BT /F1 10.50 Tf 1 0 0 1 56.00 599.89 Tm (gateway approval. No runtime third-party dependencies; the development tool is the Uliya skill kit.) Tj ET
-0.8 w 56.00 577.39 m 539.28 577.39 l S
-BT /F2 12.00 Tf 1 0 0 1 56.00 559.39 Tm (Team and consent) Tj ET
-BT /F1 10.50 Tf 1 0 0 1 56.00 540.39 Tm (Entrant: Philip Jon Ji Ciuca \(individual entry\). All members consent to the official rules and confirm the) Tj ET
-BT /F1 10.50 Tf 1 0 0 1 56.00 525.89 Tm (Skill and its core workflow were developed during the hackathon. No previously developed Skill or) Tj ET
-BT /F1 10.50 Tf 1 0 0 1 56.00 511.39 Tm (submission material is reused.) Tj ET
-BT /F2 12.00 Tf 1 0 0 1 56.00 484.89 Tm (Third-party components) Tj ET
-BT /F1 10.50 Tf 1 0 0 1 56.00 465.89 Tm (The Skill has no runtime third-party dependencies. The Uliya Skill Creation Tool \(uliya-skill-kit v0.7.3\)) Tj ET
-BT /F1 10.50 Tf 1 0 0 1 56.00 451.39 Tm (was used at development time only and is not distributed inside the Skill package.) Tj ET
+BT /F1 10.50 Tf 1 0 0 1 56.00 777.89 Tm (Implemented: the twelve-step orchestration, the unreadable list, approval handling, and a static checker) Tj ET
+BT /F1 10.50 Tf 1 0 0 1 56.00 763.39 Tm (pass with zero errors and warnings. Pending NAS validation: both comparisons, on-device vision,) Tj ET
+BT /F1 10.50 Tf 1 0 0 1 56.00 748.89 Tm (extraction, transcription, tag creation and write approval.) Tj ET
+BT /F2 12.00 Tf 1 0 0 1 56.00 722.39 Tm (9. Validation) Tj ET
+BT /F1 10.50 Tf 1 0 0 1 56.00 703.39 Tm (Core case 1: three medication photos, one letter and one voice memo produce a brief with every claim) Tj ET
+BT /F1 10.50 Tf 1 0 0 1 56.00 688.89 Tm (cited and every unreadable file listed. Core case 2: a second letter produces the change comparison,) Tj ET
+BT /F1 10.50 Tf 1 0 0 1 56.00 674.39 Tm (with one engineered dose disagreement left unresolved. Edge case: one blurry photo and no) Tj ET
+BT /F1 10.50 Tf 1 0 0 1 56.00 659.89 Tm (documents completes with an empty medication section and an unreadable entry.) Tj ET
+BT /F2 12.00 Tf 1 0 0 1 56.00 633.39 Tm (10. Limitations) Tj ET
+BT /F1 10.50 Tf 1 0 0 1 56.00 614.39 Tm (Vision reading of curved or reflective labels can fail; unreadable labels are reported, never guessed. A) Tj ET
+BT /F1 10.50 Tf 1 0 0 1 56.00 599.89 Tm (label-versus-letter disagreement is surfaced, never resolved by the Skill. Tag creation needs gateway) Tj ET
+BT /F1 10.50 Tf 1 0 0 1 56.00 585.39 Tm (approval. No runtime third-party dependencies; the development tool is the Uliya skill kit.) Tj ET
+0.8 w 56.00 562.89 m 539.28 562.89 l S
+BT /F2 12.00 Tf 1 0 0 1 56.00 544.89 Tm (Team and consent) Tj ET
+BT /F1 10.50 Tf 1 0 0 1 56.00 525.89 Tm (Entrant: Philip Jon Ji Ciuca \(individual entry\). All members consent to the official rules and confirm the) Tj ET
+BT /F1 10.50 Tf 1 0 0 1 56.00 511.39 Tm (Skill and its core workflow were developed during the hackathon. No previously developed Skill or) Tj ET
+BT /F1 10.50 Tf 1 0 0 1 56.00 496.89 Tm (submission material is reused.) Tj ET
+BT /F2 12.00 Tf 1 0 0 1 56.00 470.39 Tm (Third-party components) Tj ET
+BT /F1 10.50 Tf 1 0 0 1 56.00 451.39 Tm (The Skill has no runtime third-party dependencies. The Uliya Skill Creation Tool \(uliya-skill-kit v0.7.3\)) Tj ET
+BT /F1 10.50 Tf 1 0 0 1 56.00 436.89 Tm (was used at development time only and is not distributed inside the Skill package.) Tj ET
 endstream
 endobj
 xref
@@ -95,10 +96,10 @@ xref
 0000000224 00000 n 
 0000000326 00000 n 
 0000000468 00000 n 
-0000005081 00000 n 
-0000005223 00000 n 
+0000004934 00000 n 
+0000005076 00000 n 
 trailer
 << /Size 9 /Root 1 0 R >>
 startxref
-7447
+7507
 %%EOF

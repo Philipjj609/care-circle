@@ -1,0 +1,70 @@
+alibi-docket	Alibi Docket | Devpost	https://devpost.com/software/alibi-docket
+alice-take-your-meds	Alice, Take Your Meds | Devpost	https://devpost.com/software/alice-take-your-meds
+asset-license-shortlist	Asset License Shortlist | Devpost	https://devpost.com/software/asset-license-shortlist
+brieflens	BriefLens | Devpost	https://devpost.com/software/brieflens
+claim-evidence-pack-for-ugreen-ai-nas	Claim Evidence Pack for UGREEN AI NAS | Devpost	https://devpost.com/software/claim-evidence-pack-for-ugreen-ai-nas
+clean-set	Clean Set | Devpost	https://devpost.com/software/clean-set
+client-handoff-check	Client Handoff Check | Devpost	https://devpost.com/software/client-handoff-check
+creator-handoff-preflight	Creator Handoff Preflight | Devpost	https://devpost.com/software/creator-handoff-preflight
+deposit-shield	Deposit Shield | Devpost	https://devpost.com/software/deposit-shield
+doctor-visit-brief	Doctor Visit Brief | Devpost	https://devpost.com/software/doctor-visit-brief
+dos-medicine-dispenser-q6ycfj	dōs Medicine Dispenser | Devpost	https://devpost.com/software/dos-medicine-dispenser-q6ycfj
+echoes-uqfxyi	Echoes  | Devpost	https://devpost.com/software/echoes-uqfxyi
+edgeguard-nas-advisory-triage	Edge Advisory Triage (EdgeGuard) | Devpost	https://devpost.com/software/edgeguard-nas-advisory-triage
+elsa-8k7pod	Elsa | Devpost	https://devpost.com/software/elsa-8k7pod
+ember-bmrk5l	Ember | Devpost	https://devpost.com/software/ember-bmrk5l
+evergreen-for-lives-that-keep-flourishing	EverGreen - for lives that keep flourishing | Devpost	https://devpost.com/software/evergreen-for-lives-that-keep-flourishing
+family-medicine-cabinet	Family Medicine Cabinet | Devpost	https://devpost.com/software/family-medicine-cabinet
+family-medicine-register	Family Medicine Register | Devpost	https://devpost.com/software/family-medicine-register
+family-recipe-box	Family Recipe Box | Devpost	https://devpost.com/software/family-recipe-box
+final-version-finder	Final Version Finder | Devpost	https://devpost.com/software/final-version-finder
+guardian-et4n25	Guardian | Devpost	https://devpost.com/software/guardian-et4n25
+haven-family-emergency-vault	Haven: Family Emergency Vault | Devpost	https://devpost.com/software/haven-family-emergency-vault
+home-ai-first-aid-kit	Home AI First Aid Kit | Devpost	https://devpost.com/software/home-ai-first-aid-kit
+home-incident-claim-pack	Home Incident Claim Pack | Devpost	https://devpost.com/software/home-incident-claim-pack
+homecompass	HomeCompass | Devpost	https://devpost.com/software/homecompass
+homemaker	Homemaker | Devpost	https://devpost.com/software/homemaker
+lecture-notes-pack	Lecture Notes Pack | Devpost	https://devpost.com/software/lecture-notes-pack
+medbud	MedBud | Devpost	https://devpost.com/software/medbud
+medical-bill-checker	Medical Bill Checker | Devpost	https://devpost.com/software/medical-bill-checker
+medicine-tracker-atfnm8	Medicine Tracker | Devpost	https://devpost.com/software/medicine-tracker-atfnm8
+medilens-ad15tg	MediLens | Devpost	https://devpost.com/software/medilens-ad15tg
+medsafe-xqmb26	MedSafe | Devpost	https://devpost.com/software/medsafe-xqmb26
+medscribe-lczwdy	MedScribe | Devpost	https://devpost.com/software/medscribe-lczwdy
+medsnap-3xh9fy	MedSNAP | Devpost	https://devpost.com/software/medsnap-3xh9fy
+medtap-arndmc	MedTap | Devpost	https://devpost.com/software/medtap-arndmc
+memex-for-life	Memex for Life | Devpost	https://devpost.com/software/memex-for-life
+memory-lane-photo-memory-organizer	Memory Lane — Photo Memory Organizer | Devpost	https://devpost.com/software/memory-lane-photo-memory-organizer
+memorylens-kiuc05	MemoryLens | Devpost	https://devpost.com/software/memorylens-kiuc05
+mentaldrive	MentalDrive | Devpost	https://devpost.com/software/mentaldrive
+missing-moments	Missing Moments | Devpost	https://devpost.com/software/missing-moments
+month-end-close-pack	Month-End Close Pack | Devpost	https://devpost.com/software/month-end-close-pack
+nani-your-ai-medicine-companion	NANI: Your AI Medicine Companion | Devpost	https://devpost.com/software/nani-your-ai-medicine-companion
+nas-evidence-brief	Project ZERO — Evidence Guardian | Devpost	https://devpost.com/software/nas-evidence-brief
+nas-incident-triage	NAS Incident Triage | Devpost	https://devpost.com/software/nas-incident-triage
+nas-work-lease	NAS Work Lease. | Devpost	https://devpost.com/software/nas-work-lease
+nasweep-local-ai-storage-cleaner-for-your-nas	NASweep: Local AI Storage Cleaner for Your NAS | Devpost	https://devpost.com/software/nasweep-local-ai-storage-cleaner-for-your-nas
+nexus-ai-synergy-suite	Nexus AI Synergy Suite | Devpost	https://devpost.com/software/nexus-ai-synergy-suite
+nomi-x1mu23	Nomi | Devpost	https://devpost.com/software/nomi-x1mu23
+nudge-txm34z	nudge | Devpost	https://devpost.com/software/nudge-txm34z
+octofile	OctoFile | Devpost	https://devpost.com/software/octofile
+paper-trail-jfwdea	Paper Trail | Devpost	https://devpost.com/software/paper-trail-jfwdea
+photo-event-folders	Photo Event Folders | Devpost	https://devpost.com/software/photo-event-folders
+pocket-drugs	Medisafe | Devpost	https://devpost.com/software/pocket-drugs
+portrait-consent-guardian	Portrait Consent Guardian | Devpost	https://devpost.com/software/portrait-consent-guardian
+private-family-ai-home-cloud	Private Family AI Home Cloud | Devpost	https://devpost.com/software/private-family-ai-home-cloud
+publish-safe-photo-review	Publish-Safe Photo Review | Devpost	https://devpost.com/software/publish-safe-photo-review
+receiving-evidence-reconciler	Receiving Evidence Reconciler | Devpost	https://devpost.com/software/receiving-evidence-reconciler
+relayready	RelayReady | Devpost	https://devpost.com/software/relayready
+remembrance-card	Remembrance Card | Devpost	https://devpost.com/software/remembrance-card
+renewal-evidence-pack	Renewal Evidence Pack | Devpost	https://devpost.com/software/renewal-evidence-pack
+samename	SameName | Devpost	https://devpost.com/software/samename
+script-to-selects	Script to Selects | Devpost	https://devpost.com/software/script-to-selects
+shared-photo-collector	Shared Photo Collector | Devpost	https://devpost.com/software/shared-photo-collector
+shoot-triage	Shoot Triage | Devpost	https://devpost.com/software/shoot-triage
+sift-ufobts	Sift | Devpost	https://devpost.com/software/sift-ufobts
+snap-safe	Snap & Safe | Devpost	https://devpost.com/software/snap-safe
+supplier-three-way-match	Supplier Three-Way Match | Devpost	https://devpost.com/software/supplier-three-way-match
+ubat-rekod	Ubat & Rekod | Devpost	https://devpost.com/software/ubat-rekod
+warranty-receipt-tracker	Warranty Receipt Tracker | Devpost	https://devpost.com/software/warranty-receipt-tracker
+warranty-vault-9jsedn	Warranty Vault | Devpost	https://devpost.com/software/warranty-vault-9jsedn
