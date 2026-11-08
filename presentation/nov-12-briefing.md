@@ -20,19 +20,19 @@ a source-cited artifact a judge can verify in five seconds.
 | Deliverable | State |
 |---|---|
 | `skill/care-circle/SKILL.md` + 2 references | official checker **static-pass**, 0 errors / 0 warnings, catalog v2.0.0 |
-| `proposal/care-circle-proposal.pdf` | 8,373 bytes, 485 words across the 10 items (limit 500) |
-| `submission/care-circle-skill.zip` | 3 files, 5,745 bytes (limits 10 MB / 100 files / 1 MB each) |
+| `proposal/care-circle-proposal.pdf` | 8,312 bytes, 484 words across the 10 items (limit 500) |
+| `submission/care-circle-skill.zip` | 3 files, 5,954 bytes (limits 10 MB / 100 files / 1 MB each) |
 | `architecture/architecture.md` | 12-step workflow, approval model, failure modes, demo plan |
 | `council/verdict.md` | the decision record and the rejected alternatives |
-| GitHub | https://github.com/Philipjj609/ugreen-hackathon-care-circle (private, commit 65d8e2d) |
+| GitHub | https://github.com/Philipjj609/ugreen-hackathon-care-circle (private, `main`) |
 
 ## The workflow in one breath
 
 File expert enumerates and dedupes the folder → photo expert reads the pill labels
 with `vision-ocr`/`vision-vlm` → document expert extracts the clinic letters and
 compares each medication against its label → knowledge expert transcribes the voice
-memos → orchestrator assembles the brief → **approval gate** → packet folder created,
-brief written, sources tagged.
+memos → orchestrator assembles the brief and a separate five-line sibling update →
+**approval gate** → packet folder created, both documents written, sources tagged.
 
 Every claim carries its source path. Every unreadable file is listed. The brief never
 diagnoses and never advises dosage; it ends with "a clinician must confirm every
@@ -42,8 +42,19 @@ entry".
 
 The AI NAS Fit judge caught a real defect: step 11 used `tag-list` → `tag-add-file`,
 which fails on a fresh NAS because no tags exist and the Skill never created them.
-Fixed to `tag-get-by-name` → `tag-add` → `tag-add-file`. This is the kind of failure
-that would have been visible on camera in Round 2.
+Fixed to `tag-get-by-name` → `tag-add` → `tag-add-file`.
+
+A second catalog re-audit then checked every parameter the Skill relies on, not just
+the action names the official checker validates. Three more defects, all fixed:
+
+1. `ug-photo vision-ocr` takes a **single** path, so step 3 now runs one call per
+   image instead of implying a batch call.
+2. `ug-filemgr tag-add` requires `tag-id`, not a name, so step 11 now sets `tag-id`
+   to the tag name explicitly.
+3. The sibling update was listed both as a section of the brief and as its own output
+   path. It is now a separate document with its own `save-text` call.
+
+These are exactly the failures that would have been visible on camera in Round 2.
 
 ## The risks that matter
 

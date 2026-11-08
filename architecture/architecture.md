@@ -41,14 +41,14 @@ from real results, and holds the approval gate.
 |---|---|---|---|---|
 | 1 | orchestrator | confirm folder, parent name, appointment date | — | none |
 | 2 | file-agent | `ug-filesystem find`, `ls`; `ug-filemgr scan-dedupe` | read | none |
-| 3 | photo-agent | `ug-photo vision-ocr`; `vision-vlm` on ambiguous labels | read | none |
+| 3 | photo-agent | `ug-photo vision-ocr` (one call per image); `vision-vlm` on ambiguous labels | read | none |
 | 4 | document-agent | `ug-document metadata`, `page-count`, `extract` (schema `medical-report`) | read | none |
 | 5 | document-agent | `ug-document qa` (intent `comparison`) — label vs report | read | none |
 | 6 | knowledge-agent | `ug-knowledge audio-transcription` | read | none |
-| 7 | orchestrator | assemble the brief from real results 2–6 | — | none |
+| 7 | orchestrator | assemble the brief and the sibling update from real results 2–6 | — | none |
 | 8 | orchestrator | **approval gate** — present brief, conflicts, unreadable list | — | waiting_approval |
 | 9 | file-agent | `ug-filesystem mkdir` (packet folder) | state-change | gateway |
-| 10 | knowledge-agent | `ug-knowledge save-text` (brief + sibling update) | state-change | workflow |
+| 10 | knowledge-agent | two `ug-knowledge save-text` calls (brief, sibling update) | state-change | workflow |
 | 11 | file-agent | `ug-filemgr tag-get-by-name`, `tag-add`, `tag-add-file` | state-change | gateway + conditional |
 | 12 | orchestrator | report paths, tags, conflicts, unreadable list | — | none |
 
@@ -92,18 +92,22 @@ a write that has not returned `completed`.
 Empty results are reported as empty. The Skill never substitutes a similar folder,
 broadens the filter, or fills a gap from memory.
 
-## 7. The artifact
+## 7. The artifacts
 
-One dated document with eight sections, in order:
+Two dated documents are written to the packet folder.
+
+The **care brief** is the clinician-facing document, with seven sections in order:
 
 1. Header — parent, appointment date, source folder.
 2. Current medications — drug, dose, frequency, source file, label-vs-report status.
 3. Recent results — findings and measurements with source.
 4. Changes since the previous visit — or an explicit "no previous report".
 5. Questions for the doctor — each with its source.
-6. Sibling update — five lines readable in under a minute.
-7. Unreadable and missing list.
-8. Confirmation line — a clinician must confirm every entry.
+6. Unreadable and missing list.
+7. Confirmation line — a clinician must confirm every entry.
+
+The **sibling update** is a separate five-line note a sibling can read in under a
+minute and paste into a family chat.
 
 The sibling update is the emotional hook; the unreadable list is the trust hook; the
 confirmation line is the safety hook.
@@ -169,3 +173,8 @@ engineer one deliberate label/report dose conflict; pre-test one label with
 - 2026-11-08 — council selected care-circle; step 11 amended to bootstrap tags
   (`tag-get-by-name` → `tag-add` → `tag-add-file`); approval gate and
   label-vs-report conflict step added; static re-check green.
+- 2026-11-08 — catalog re-audit of every parameter used: `vision-ocr.path` is
+  single-valued, so step 3 now runs one call per image; `tag-add` takes `tag-id`,
+  so step 11 sets `tag-id` to the tag name; the sibling update is now a separate
+  document written by its own `save-text` call, resolving the duplicate-section
+  inconsistency in the brief structure.

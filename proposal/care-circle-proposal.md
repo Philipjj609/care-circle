@@ -16,11 +16,11 @@ Adult children caring for an ageing parent. Evidence is scattered across pill-bo
 
 ## 3. What is your proposed solution?
 
-A local care brief that reads each modality with the matching UGOS expert and writes one dated document: current medications with source files, label-versus-report conflicts, recent results, changes since the last visit, questions for the doctor, a five-line sibling update and an unreadable list. It never diagnoses or advises dosage.
+A local care brief that reads each modality with the matching UGOS expert and writes two dated documents: a source-cited brief covering current medications with source files, label-versus-report conflicts, recent results, changes since the last visit, questions for the doctor and an unreadable list; and a five-line sibling update a family can share. It never diagnoses or advises dosage.
 
 ## 4. What is the Core User Flow?
 
-The user names a care folder, the parent's name and the appointment date. The file expert enumerates and deduplicates the folder. The photo expert reads medication labels. The document expert extracts clinic letters and compares each medication against its label. The knowledge expert transcribes voice memos. The brief is approved, written back and its sources tagged.
+The user names a care folder, the parent's name and the appointment date. The file expert enumerates and deduplicates the folder. The photo expert reads medication labels. The document expert extracts clinic letters and compares each medication against its label. The knowledge expert transcribes voice memos. Both are approved, written back and tagged at source.
 
 ## 5. What substantive difference does your idea offer compared with existing tools or conventional AI solutions?
 
@@ -28,11 +28,11 @@ Existing tools are static inventories, expiry diffs or single-modal cloud assist
 
 ## 6. Which UGREEN AI NAS capabilities will be used, and at which step in the workflow?
 
-Step 2: `ug-filesystem find`, `ug-filesystem ls`, `ug-filemgr scan-dedupe` (file-agent). Step 3: `ug-photo vision-ocr`, `ug-photo vision-vlm` (photo-agent). Steps 4-5: `ug-document metadata`, `page-count`, `extract` schema `medical-report`, `qa` intent `comparison` (document-agent). Step 6: `ug-knowledge audio-transcription` (knowledge-agent). Step 9: `ug-filesystem mkdir`. Step 10: `ug-knowledge save-text`. Step 11: `ug-filemgr tag-get-by-name`, `tag-add`, `tag-add-file`.
+Step 2: `ug-filesystem find`, `ug-filesystem ls`, `ug-filemgr scan-dedupe` (file-agent). Step 3: `ug-photo vision-ocr`, `ug-photo vision-vlm` (photo-agent). Steps 4-5: `ug-document metadata`, `page-count`, `extract` schema `medical-report`, `qa` intent `comparison` (document-agent). Step 6: `ug-knowledge audio-transcription` (knowledge-agent). Step 9: `ug-filesystem mkdir`. Step 10: two `ug-knowledge save-text` calls. Step 11: `ug-filemgr tag-get-by-name`, `tag-add`, `tag-add-file`.
 
 ## 7. What was your technical approach?
 
-Pure Markdown orchestration. It delegates only through `delegate --target` to the four registered experts in a fixed order, passing each step's real result downstream. Read steps are ungated; the brief approval, folder creation, write and tags are approval-gated, never bypassed. Inputs are the folder, the parent name and the date. The NAS local model performs vision, extraction and transcription; nothing leaves the device.
+Pure Markdown orchestration. It delegates only through `delegate --target` to the four registered experts in a fixed order, passing each step's real result downstream. Read steps are ungated; the brief approval, folder creation, write and tags are approval-gated. Inputs: the folder, the parent name, the date. The NAS local model performs vision, extraction and transcription; nothing leaves the device.
 
 ## 8. What is the current development status?
 
@@ -44,7 +44,7 @@ Core case 1: three medication photos, one clinic letter and one voice memo produ
 
 ## 10. Are there any known limitations of your Project?
 
-Vision reading of curved or reflective pill labels can fail; unreadable labels are reported, never guessed. Medication detail is only as good as the source documents. A label-versus-report conflict is reported, not resolved. Tag creation needs gateway approval. No surveillance or media capabilities are used. No runtime third-party dependencies; the only development tool is the UGREEN Uliya skill kit.
+Vision reading of curved or reflective pill labels can fail; unreadable labels are reported, never guessed. Medication detail is only as good as the source documents. A label-versus-report conflict is reported, not resolved. Tag creation needs gateway approval. No runtime third-party dependencies; the only development tool is the UGREEN Uliya skill kit.
 
 ---
 
