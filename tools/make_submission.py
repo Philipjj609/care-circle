@@ -185,7 +185,9 @@ def parse(md):
             m = re.match(r'^\*\*(.+):\*\*\s*(.*)$', line)
             blocks.append(('meta', m.group(1) + ': ' + m.group(2)))
         else:
-            blocks.append(('p', re.sub(r'\*\*(.+?)\*\*', r'\1', line)))
+            text = re.sub(r'\*\*(.+?)\*\*', r'\1', line)
+            text = re.sub(r'`([^`]*)`', r'\1', text)
+            blocks.append(('p', text))
     return blocks
 
 

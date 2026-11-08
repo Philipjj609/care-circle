@@ -18,6 +18,7 @@ skill/care-circle/                 the Uliya Skill package
 proposal/care-circle-proposal.md  the ten proposal answers (458 words; 490 as the PDF renders them)
 proposal/care-circle-proposal.pdf the submitted PDF (<= 1 MB)
 submission/care-circle-skill.zip  the submitted ZIP (<= 10 MB, 3 files)
+submission/devpost-upload.md      the one-screen upload guide: files, track, answers
 architecture/architecture.md      workflow, state model, failure modes, demo plan
 council/                          concept-selection record and judge verdicts
 research/                         candidate concepts and competitor landscape

@@ -16,7 +16,7 @@ endobj
 << /Type /Page /Parent 2 0 R /MediaBox [0 0 595.28 841.89] /Resources << /Font << /F1 3 0 R /F2 4 0 R >> >> /Contents 6 0 R >>
 endobj
 6 0 obj
-<< /Length 4597 >>
+<< /Length 4561 >>
 stream
 BT /F2 17.00 Tf 1 0 0 1 56.00 769.89 Tm (UGREEN Hackathon 2026 on AI NAS — Project Proposal) Tj ET
 BT /F2 10.50 Tf 1 0 0 1 56.00 745.89 Tm (Project: care-circle) Tj ET
@@ -44,13 +44,13 @@ BT /F1 10.50 Tf 1 0 0 1 56.00 356.39 Tm (Existing tools are static inventories, 
 BT /F1 10.50 Tf 1 0 0 1 56.00 341.89 Tm (with on-device vision, transcribes the parent's voice, extracts the clinic letter and binds every claim to its) Tj ET
 BT /F1 10.50 Tf 1 0 0 1 56.00 327.39 Tm (source. Health data never leaves the NAS; the brief is written back with sources tagged in place.) Tj ET
 BT /F2 12.00 Tf 1 0 0 1 56.00 300.89 Tm (6. NAS capabilities by step) Tj ET
-BT /F1 10.50 Tf 1 0 0 1 56.00 281.89 Tm (Step 2: `ug-filesystem find` and `ls`, `ug-filemgr scan-dedupe` \(file-agent\). Step 3: `ug-photo vision-ocr`) Tj ET
-BT /F1 10.50 Tf 1 0 0 1 56.00 267.39 Tm (and `vision-vlm` \(photo-agent\). Steps 4-5: `ug-document metadata`, `page-count`, `extract` schema) Tj ET
-BT /F1 10.50 Tf 1 0 0 1 56.00 252.89 Tm (`medical-report`, `qa` intent `comparison` \(document-agent\). Step 6: `ug-knowledge audio-transcription`) Tj ET
-BT /F1 10.50 Tf 1 0 0 1 56.00 238.39 Tm (\(knowledge-agent\). Step 9: `ug-filesystem mkdir`. Step 10: `ug-knowledge save-text`. Step 11:) Tj ET
-BT /F1 10.50 Tf 1 0 0 1 56.00 223.89 Tm (`ug-filemgr tag-get-by-name`, `tag-add`, `tag-add-file`.) Tj ET
+BT /F1 10.50 Tf 1 0 0 1 56.00 281.89 Tm (Step 2: ug-filesystem find and ls, ug-filemgr scan-dedupe \(file-agent\). Step 3: ug-photo vision-ocr and) Tj ET
+BT /F1 10.50 Tf 1 0 0 1 56.00 267.39 Tm (vision-vlm \(photo-agent\). Steps 4-5: ug-document metadata, page-count, extract schema) Tj ET
+BT /F1 10.50 Tf 1 0 0 1 56.00 252.89 Tm (medical-report, qa intent comparison \(document-agent\). Step 6: ug-knowledge audio-transcription) Tj ET
+BT /F1 10.50 Tf 1 0 0 1 56.00 238.39 Tm (\(knowledge-agent\). Step 9: ug-filesystem mkdir. Step 10: ug-knowledge save-text. Step 11: ug-filemgr) Tj ET
+BT /F1 10.50 Tf 1 0 0 1 56.00 223.89 Tm (tag-get-by-name, tag-add, tag-add-file.) Tj ET
 BT /F2 12.00 Tf 1 0 0 1 56.00 197.39 Tm (7. Technical approach) Tj ET
-BT /F1 10.50 Tf 1 0 0 1 56.00 178.39 Tm (Pure Markdown orchestration. It delegates only through `delegate --target` to the four registered experts) Tj ET
+BT /F1 10.50 Tf 1 0 0 1 56.00 178.39 Tm (Pure Markdown orchestration. It delegates only through delegate --target to the four registered experts) Tj ET
 BT /F1 10.50 Tf 1 0 0 1 56.00 163.89 Tm (in order, passing each step's real result downstream. Read steps are ungated; brief approval, folder) Tj ET
 BT /F1 10.50 Tf 1 0 0 1 56.00 149.39 Tm (creation, writes and tags are approval-gated. Inputs: the folder, the parent, the date. The NAS local) Tj ET
 BT /F1 10.50 Tf 1 0 0 1 56.00 134.89 Tm (model performs vision, extraction and transcription; nothing leaves the device.) Tj ET
@@ -95,10 +95,10 @@ xref
 0000000224 00000 n 
 0000000326 00000 n 
 0000000468 00000 n 
-0000005117 00000 n 
-0000005259 00000 n 
+0000005081 00000 n 
+0000005223 00000 n 
 trailer
 << /Size 9 /Root 1 0 R >>
 startxref
-7483
+7447
 %%EOF

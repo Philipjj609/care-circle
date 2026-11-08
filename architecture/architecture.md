@@ -191,3 +191,6 @@ bootstrap.
   sibling update, and a 40-check acceptance list. It carries the deliberate
   metformin dose conflict, the earlier-report baseline and one unreadable photo,
   so the finalist can rehearse and record without a real patient's data.
+- 2026-11-08 — the proposal renderer now strips inline code backticks, which were
+  rendering literally in the judged PDF; `submission/devpost-upload.md` added as
+  the one-screen upload guide.
