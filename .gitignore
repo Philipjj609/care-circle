@@ -1,0 +1,12 @@
+# Build output (canonical copies live in proposal/ and submission/)
+dist/
+vendor/
+scratch/
+
+# Python
+__pycache__/
+*.pyc
+
+# OS
+.DS_Store
+Thumbs.db
