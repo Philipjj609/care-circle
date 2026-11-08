@@ -7,9 +7,9 @@ Per-step delegation map for the care brief. Every step passes only the real resu
 | 1 | orchestrator | confirm folder, parent name, appointment date | none | none | missing item returns `waiting_user`; ask once and stop |
 | 2 | file-agent | `ug-filesystem find`, `ug-filesystem ls`, `ug-filemgr scan-dedupe` | read | none | empty folder is reported as empty; stop, never broaden the scope |
 | 3 | photo-agent | `ug-photo vision-ocr` (one call per image), `ug-photo vision-vlm` | read | none | unreadable label is listed as unreadable; the step still completes |
-| 4 | document-agent | `ug-document metadata`, `ug-document page-count`, `ug-document extract` schema `medical-report` | read | none | a report that yields no rows is reported as no rows |
-| 5 | document-agent | `ug-document qa` intent `comparison` | read | none | a medication with no report entry is reported as having no report entry, never resolved by guess |
-| 6 | knowledge-agent | `ug-knowledge audio-transcription` | read | none | a memo with no speech is reported as no transcript; the brief marks the memo as missing |
+| 4 | document-agent | `ug-document metadata`, `ug-document page-count`, `ug-document extract` schema `medical-report` — diagnoses, medications with dates, results and measurements, findings | read | none | a report that yields no rows is reported as no rows |
+| 5 | document-agent | `ug-document qa` intent `comparison` — label vs report, then report vs earlier report | read | none | a medication with no report entry is reported as having no report entry; a single report returns an explicit no previous report; neither is resolved by guess |
+| 6 | knowledge-agent | `ug-knowledge audio-transcription` — transcript and any questions the speaker asked | read | none | a memo with no speech is reported as no transcript; the brief marks the memo as missing |
 | 7 | orchestrator | assemble the brief and the sibling update from the real results of steps 2 to 6 | none | none | a section with no source is omitted and named as not available |
 | 8 | orchestrator | approval gate: present the brief, the conflicts and the unreadable list | none | waiting_approval | no approval means no write; a conflict left unresolved stays in the brief marked unresolved |
 | 9 | file-agent | `ug-filesystem mkdir` | state-change | gateway | pending creation is surfaced; read-only work continues |

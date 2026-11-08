@@ -20,8 +20,8 @@ a source-cited artifact a judge can verify in five seconds.
 | Deliverable | State |
 |---|---|
 | `skill/care-circle/SKILL.md` + 2 references | official checker **static-pass**, 0 errors / 0 warnings, catalog v2.0.0 |
-| `proposal/care-circle-proposal.pdf` | 8,312 bytes, 484 words across the 10 items (limit 500) |
-| `submission/care-circle-skill.zip` | 3 files, 5,954 bytes (limits 10 MB / 100 files / 1 MB each) |
+| `proposal/care-circle-proposal.pdf` | 7,727 bytes, 458 words in the answers, 490 including headings (limit 500) |
+| `submission/care-circle-skill.zip` | 3 files, 6,198 bytes (limits 10 MB / 100 files / 1 MB each) |
 | `architecture/architecture.md` | 12-step workflow, approval model, failure modes, demo plan |
 | `council/verdict.md` | the decision record and the rejected alternatives |
 | GitHub | https://github.com/Philipjj609/ugreen-hackathon-care-circle (private, `main`) |

@@ -189,9 +189,40 @@ def parse(md):
     return blocks
 
 
+def proposal_word_count(md):
+    """Count English words in the ten official items two ways.
+
+    `answers` counts the answer bodies only; the item headings are the form's own
+    question text, not entrant content. `rendered` counts the headings as the PDF
+    renders them, section number included — the strictest reading a judge could
+    apply. Returns (answers, rendered).
+    """
+    parts = re.split(r'^## (\d+)\. ', md, flags=re.M)
+    answers, rendered = {}, {}
+    for i in range(1, len(parts), 2):
+        n = int(parts[i])
+        body = parts[i + 1]
+        body = body.split('\n---')[0]
+        if n == 10:
+            body = body.split('Team and consent')[0]
+        lines = body.split('\n')
+        label = lines[0] if lines and lines[0].strip() else ''
+        answer = '\n'.join(lines[1:]) if label else body
+        count = lambda t: len([w for w in t.split() if re.search(r'[A-Za-z0-9]', w)])
+        answers[n] = count(answer)
+        rendered[n] = count("%d. %s" % (n, label)) + answers[n]
+    return sum(answers.values()), sum(rendered.values())
+
+
 def main():
     os.makedirs(DIST, exist_ok=True)
     md = open(PROPOSAL_MD, encoding='utf-8').read()
+
+    answers, rendered = proposal_word_count(md)
+    print("Proposal words across the 10 items: %d answers-only, %d as the PDF renders them (limit 500)" % (answers, rendered))
+    if rendered > 500:
+        raise SystemExit("WORD LIMIT EXCEEDED: %d > 500" % rendered)
+
     pdf_path = os.path.join(DIST, "care-circle-proposal.pdf")
     size, npages = build_pdf(parse(md), pdf_path)
     print("PDF: %s (%d bytes, %d page(s))" % (pdf_path, size, npages))

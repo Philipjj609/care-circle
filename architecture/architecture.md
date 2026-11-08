@@ -42,9 +42,9 @@ from real results, and holds the approval gate.
 | 1 | orchestrator | confirm folder, parent name, appointment date | — | none |
 | 2 | file-agent | `ug-filesystem find`, `ls`; `ug-filemgr scan-dedupe` | read | none |
 | 3 | photo-agent | `ug-photo vision-ocr` (one call per image); `vision-vlm` on ambiguous labels | read | none |
-| 4 | document-agent | `ug-document metadata`, `page-count`, `extract` (schema `medical-report`) | read | none |
-| 5 | document-agent | `ug-document qa` (intent `comparison`) — label vs report | read | none |
-| 6 | knowledge-agent | `ug-knowledge audio-transcription` | read | none |
+| 4 | document-agent | `ug-document metadata`, `page-count`, `extract` (schema `medical-report`) — diagnoses, medications with dates, results and measurements, findings | read | none |
+| 5 | document-agent | `ug-document qa` (intent `comparison`) — label vs report, then report vs earlier report | read | none |
+| 6 | knowledge-agent | `ug-knowledge audio-transcription` — transcript and any questions the speaker asked | read | none |
 | 7 | orchestrator | assemble the brief and the sibling update from real results 2–6 | — | none |
 | 8 | orchestrator | **approval gate** — present brief, conflicts, unreadable list | — | waiting_approval |
 | 9 | file-agent | `ug-filesystem mkdir` (packet folder) | state-change | gateway |
@@ -136,7 +136,7 @@ kit v0.7.3 (not distributed inside the package).
 
 - **Static:** `node vendor/uliya-skill-kit/scripts/check-skill.mjs skill/care-circle`
   → `static-pass`, 0 errors, 0 warnings, 0 info, against catalog v2.0.0.
-- **Catalog conformance:** all 13 CLI actions used are present in catalog v2.0.0 with
+- **Catalog conformance:** all 16 CLI actions used are present in catalog v2.0.0 with
   the stated approval levels.
 - **Planned runtime cases (Round 2):**
   - Core 1 — three medication photos + one letter + one memo → brief with every claim
@@ -178,3 +178,8 @@ engineer one deliberate label/report dose conflict; pre-test one label with
   so step 11 sets `tag-id` to the tag name; the sibling update is now a separate
   document written by its own `save-text` call, resolving the duplicate-section
   inconsistency in the brief structure.
+- 2026-11-08 — claims-vs-does audit against the brief's seven sections: step 4 now
+  asks for results and measurements (section 3 had no supporting extraction);
+  step 5 now also compares the most recent report against the earlier report
+  (section 4, "changes since the previous visit", was claimed but never computed);
+  step 6 now returns the questions the speaker asked (section 5).

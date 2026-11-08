@@ -15,7 +15,7 @@ skill/care-circle/                 the Uliya Skill package
   SKILL.md                         entry point (required)
   references/workflow-matrix.md    per-step agent / CLI / approval map
   references/disclosure-and-compliance.md
-proposal/care-circle-proposal.md  the ten proposal answers (484 words)
+proposal/care-circle-proposal.md  the ten proposal answers (458 words; 490 as the PDF renders them)
 proposal/care-circle-proposal.pdf the submitted PDF (<= 1 MB)
 submission/care-circle-skill.zip  the submitted ZIP (<= 10 MB, 3 files)
 architecture/architecture.md      workflow, state model, failure modes, demo plan
@@ -31,6 +31,7 @@ tools/make_submission.py          renders the proposal PDF and the Skill ZIP
 ```bash
 python3 tools/make_submission.py
 # -> dist/care-circle-proposal.pdf and dist/care-circle-pretest-skill.zip
+#    also enforces the 500-word proposal limit and prints both counts
 ```
 
 ## Check the Skill
@@ -45,8 +46,9 @@ node <uliya-skill-kit>/scripts/check-skill.mjs skill/care-circle
 ## Round 1 status
 
 - Official static checker: **static-pass**, 0 errors, 0 warnings, 0 info.
-- Proposal: 484 English words across the ten items (limit 500).
-- Package: 3 files, 5,954 bytes compressed, 13,867 bytes uncompressed.
+- Proposal: 458 English words in the ten answers; 490 including the section
+  headings, so it stays under the 500-word limit on the strictest reading.
+- Package: 3 files, 6,198 bytes compressed, 14,534 bytes uncompressed.
 - Not yet validated: on-device behaviour of `ug-photo vision-ocr`/`vision-vlm`,
   `ug-document extract` (schema `medical-report`), `ug-knowledge
   audio-transcription`, tag creation and write approval. These are Round 2 items.
