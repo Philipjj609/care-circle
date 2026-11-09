@@ -9,13 +9,12 @@ Turn one folder of mixed care documents, medication photos and voice memos into 
 
 # Required input
 
-Collect the care folder the user names, the parent's name, and the appointment date. Resolve the folder with `file-workflow get-user-dir` when the user names no path. Do not pre-collect medication names, diagnoses or account values; the registered experts resolve the real files. If the folder, the parent's name or the appointment date is missing, ask for the missing item and stop.
+Collect the care folder the user names, the parent's name, and the appointment date. The care folder is the path the user names, passed to the file expert as given; never treat the user's home directory as the care folder and never widen the folder beyond the path named. Do not pre-collect medication names, diagnoses or account values; the registered experts resolve the real files. If the folder, the parent's name or the appointment date is missing, ask for the missing item and stop.
 
 # Generation-time capability evidence
 
 - `ug-filesystem` → `file-agent`
 - `ug-filemgr` → `file-agent`
-- `file-workflow` → `file-agent`
 - `ug-document` → `document-agent`
 - `ug-knowledge` → `knowledge-agent`
 - `ug-photo` → `photo-agent`

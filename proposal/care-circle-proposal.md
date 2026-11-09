@@ -28,7 +28,7 @@ care-circle compares each medication across the label read on-device, the clinic
 
 ## 6. NAS capabilities by step
 
-1. `file-workflow get-user-dir` (file-agent). 2. `ug-filesystem find` and `ls`, `ug-filemgr scan-dedupe` (file-agent). 3. `ug-photo vision-ocr` and `vision-vlm` (photo-agent). 4–5. `ug-document metadata`, `page-count`, `extract` schema `medical-report`, `qa` intent `comparison`, `reconcile` (document-agent). 6. `ug-knowledge audio-transcription` (knowledge-agent). 9. `ug-filesystem mkdir`. 10. `ug-knowledge save-text`. 11. `ug-filemgr tag-get-by-name`, `tag-add`, `tag-add-file`.
+2. `ug-filesystem find` and `ls`, `ug-filemgr scan-dedupe` (file-agent). 3. `ug-photo vision-ocr` and `vision-vlm` (photo-agent). 4–5. `ug-document metadata`, `page-count`, `extract` schema `medical-report`, `qa` intent `comparison`, `reconcile` (document-agent). 6. `ug-knowledge audio-transcription` (knowledge-agent). 9. `ug-filesystem mkdir`. 10. `ug-knowledge save-text`. 11. `ug-filemgr tag-get-by-name`, `tag-add`, `tag-add-file`.
 
 ## 7. Technical approach
 
