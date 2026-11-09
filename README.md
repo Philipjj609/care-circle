@@ -22,7 +22,6 @@ skill/care-circle/                 the Uliya Skill package
 proposal/care-circle-proposal.md  the ten proposal answers
 proposal/care-circle-proposal.pdf the submitted PDF (<= 1 MB)
 submission/care-circle-skill.zip  the submitted ZIP (<= 10 MB, 3 files)
-submission/devpost-upload.md      the one-screen Devpost upload guide
 ```
 
 Round 2 material (final package, demo video) is added here if care-circle is
