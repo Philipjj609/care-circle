@@ -48,7 +48,7 @@ node <uliya-skill-kit>/scripts/check-skill.mjs skill/care-circle
 ## Round 1 status
 
 - Official static checker: **static-pass**, 0 errors, 0 warnings, 0 info.
-- Proposal: 465 English words in the ten answers; 497 including the section
+- Proposal: 449 English words in the ten answers; 481 including the section
   headings, so it stays under the 500-word limit on the strictest reading.
 - Package: 3 files, 7,079 bytes compressed, 17,615 bytes uncompressed.
 - Not yet validated: the label-versus-report and report-versus-report
