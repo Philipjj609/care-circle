@@ -24,7 +24,7 @@ The user names a folder, the parent and the appointment date. The file expert en
 
 ## 5. Difference from existing tools
 
-care-circle compares the family's own documents: each medication is read from its label and from the clinic letter, and a disagreement is reported with both source paths, deliberately left unresolved for the clinician. Nothing is reconciled silently, and nothing leaves the NAS.
+care-circle compares the family's own documents: each medication is read from its label and from the clinic letter, and a disagreement is reported with both source paths, deliberately left unresolved for the clinician. It never reconciles silently, and nothing leaves the NAS.
 
 ## 6. NAS capabilities by step
 
@@ -40,7 +40,7 @@ Implemented: the twelve-step orchestration, the unreadable list, approval handli
 
 ## 9. Validation
 
-Core case: the seven-file oracle — four medication images (one deliberately blurry), two clinic letters and one voice memo — produces a brief with every claim cited, every unreadable file listed, the change comparison and one engineered dose disagreement left unresolved. Edge case: one blurry photo and no documents completes with an empty medication section and an unreadable entry.
+Core case one: the seven-file oracle — four medication images (one deliberately blurry), two clinic letters and one voice memo — produces a brief with every claim cited, the change comparison and one engineered dose disagreement left unresolved. Core case two: an agreeing label and letter produce no conflict row. Edge case: one blurry photo and no documents yields an empty medication section and an unreadable entry.
 
 ## 10. Limitations
 

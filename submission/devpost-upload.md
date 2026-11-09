@@ -9,8 +9,8 @@ track. The upload itself needs Philip's Devpost account.
 
 | File | Path | Size | Limit |
 |---|---|---|---|
-| Project Proposal PDF | `proposal/care-circle-proposal.pdf` | 7,945 bytes, 2 pages | ≤ 1 MB |
-| Pre-test Skill Package ZIP | `submission/care-circle-skill.zip` | 6,979 bytes, 3 files | ≤ 10 MB, ≤ 100 files, ≤ 1 MB each |
+| Project Proposal PDF | `proposal/care-circle-proposal.pdf` | 8,026 bytes, 2 pages | ≤ 1 MB |
+| Pre-test Skill Package ZIP | `submission/care-circle-skill.zip` | 7,058 bytes, 3 files | ≤ 10 MB, ≤ 100 files, ≤ 1 MB each |
 
 Both are the canonical copies, byte-identical to `dist/` in the working folder.
 The build runs in the working folder, then the copies land here. Re-verify before
@@ -34,7 +34,7 @@ differentiation claim.
 
 ## The ten answers
 
-Paste each into the matching form field. 457 words in the answers, 489 as the
+Paste each into the matching form field. 465 words in the answers, 497 as the
 PDF renders them; the limit is 500.
 
 **1. One sentence: What does the Skill do?**
@@ -70,8 +70,8 @@ tools or conventional AI solutions?**
 
 > care-circle compares the family's own documents: each medication is read from
 > its label and from the clinic letter, and a disagreement is reported with both
-> source paths, deliberately left unresolved for the clinician. Nothing is
-> reconciled silently, and nothing leaves the NAS.
+> source paths, deliberately left unresolved for the clinician. It never
+> reconciles silently, and nothing leaves the NAS.
 
 **6. Which UGREEN AI NAS capabilities will be used, and at which step in the
 workflow?**
@@ -102,11 +102,12 @@ workflow?**
 
 **9. What is your final validation plan?**
 
-> Core case: the seven-file oracle — four medication images (one deliberately
+> Core case one: the seven-file oracle — four medication images (one deliberately
 > blurry), two clinic letters and one voice memo — produces a brief with every
-> claim cited, every unreadable file listed, the change comparison and one
-> engineered dose disagreement left unresolved. Edge case: one blurry photo and no
-> documents completes with an empty medication section and an unreadable entry.
+> claim cited, the change comparison and one engineered dose disagreement left
+> unresolved. Core case two: an agreeing label and letter produce no conflict row.
+> Edge case: one blurry photo and no documents yields an empty medication section
+> and an unreadable entry.
 
 **10. Are there any known limitations of your Project?**
 
